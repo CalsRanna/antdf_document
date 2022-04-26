@@ -1,0 +1,21 @@
+import 'package:ant_design_flutter/antdf.dart';
+
+void main() {
+  runApp(const AntApp(home: SpaceBasicDemo()));
+}
+
+class SpaceBasicDemo extends StatelessWidget {
+  const SpaceBasicDemo({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const AntScaffold(
+      body: Space(children: [
+        Text('Space'),
+        Button(child: Text('Button')),
+        Button(child: Text('Click to Upload')),
+        Button(child: Text('Confirm')),
+      ]),
+    );
+  }
+}

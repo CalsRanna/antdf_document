@@ -1,0 +1,29 @@
+import 'package:ant_design_flutter/antdf.dart';
+
+void main() {
+  runApp(const AntApp(home: ButtonTypeDemo()));
+}
+
+class ButtonTypeDemo extends StatelessWidget {
+  const ButtonTypeDemo({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const AntScaffold(
+      body: Space(
+        direction: Axis.vertical,
+        children: [
+          Space(children: [
+            Button(child: Text('Primary Button'), type: ButtonType.primary),
+            Button(child: Text('Default Button')),
+            Button(child: Text('Dashed Button'), type: ButtonType.dashed),
+          ]),
+          Space(children: [
+            Button(child: Text('Text Button'), type: ButtonType.text),
+            Button(child: Text('Link Button'), type: ButtonType.link),
+          ]),
+        ],
+      ),
+    );
+  }
+}

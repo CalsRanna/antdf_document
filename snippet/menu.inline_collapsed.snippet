@@ -1,0 +1,29 @@
+import 'package:ant_design_flutter/antdf.dart';
+
+void main() {
+  runApp(const AntApp(home: MenuInlineCollapsedDemo()));
+}
+
+class MenuInlineCollapsedDemo extends StatelessWidget {
+  const MenuInlineCollapsedDemo({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const AntScaffold(
+      body: Menu(
+        children: [
+          MenuItem(child: Text('Option 1'), name: 'option-1'),
+          MenuItem(child: Text('Option 2'), name: 'option-2'),
+          MenuItem(child: Text('Option 3'), name: 'option-3'),
+          MenuItem(child: Text('Option 4'), name: 'option-4'),
+          MenuItem(child: Text('Option 5'), name: 'option-5'),
+          MenuItem(child: Text('Option 6'), name: 'option-6'),
+        ],
+        inlineCollapsed: true,
+        mode: MenuMode.inline,
+        selectedKeys: ['option-1'],
+        theme: Theme.dark,
+      ),
+    );
+  }
+}

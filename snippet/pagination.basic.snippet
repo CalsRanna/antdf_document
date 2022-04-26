@@ -1,0 +1,16 @@
+import 'package:ant_design_flutter/antdf.dart';
+
+void main() {
+  runApp(const AntApp(home: PaginationBasicDemo()));
+}
+
+class PaginationBasicDemo extends StatelessWidget {
+  const PaginationBasicDemo({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const AntScaffold(
+      body: Pagination(total: 50),
+    );
+  }
+}
