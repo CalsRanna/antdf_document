@@ -1,0 +1,16 @@
+import 'package:ant_design_flutter/antdf.dart';
+
+void main() {
+  runApp(const AntApp(home: CheckboxBasicDemo()));
+}
+
+class CheckboxBasicDemo extends StatelessWidget {
+  const CheckboxBasicDemo({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const AntScaffold(
+      body: Checkbox(child: Text('Checkbox')),
+    );
+  }
+}

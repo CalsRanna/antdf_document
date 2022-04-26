@@ -1,0 +1,25 @@
+import 'package:ant_design_flutter/antdf.dart';
+
+void main() {
+  runApp(const AntApp(home: TypographyTitleDemo()));
+}
+
+class TypographyTitleDemo extends StatelessWidget {
+  const TypographyTitleDemo({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AntScaffold(
+      body: Column(
+        children: const [
+          TypographyTitle('h1.Ant Design')
+          TypographyTitle('h2.Ant Design', level: 2),
+          TypographyTitle('h3.Ant Design', level: 3),
+          TypographyTitle('h4.Ant Design', level: 4),
+          TypographyTitle('h5.Ant Design', level: 5),
+        ],
+        crossAxisAlignment: CrossAxisAlignment.start,
+      ),
+    );
+  }
+}

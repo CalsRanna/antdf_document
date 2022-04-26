@@ -4,9 +4,11 @@ packages:
   ant_design_flutter:
     dependency: "direct main"
     description:
-      path: "/Users/cals/Code/ant_design_flutter"
-      relative: false
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: "60080504f2d98cf0af83e760d13f4f6712ebced1"
+      url: "https://github.com/CalsRanna/ant_design_flutter.git"
+    source: git
     version: "0.0.1"
   async:
     dependency: transitive

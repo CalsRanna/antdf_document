@@ -1,0 +1,30 @@
+import 'package:ant_design_flutter/antdf.dart';
+
+void main() {
+  runApp(const AntApp(home: DividerDemo()));
+}
+
+class DividerDemo extends StatelessWidget {
+  const DividerDemo({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AntScaffold(
+      body: Column(
+        children: const [
+          Text('Lorem ipsum dolor sit amet, consectetur adipiscing '
+              'elit. Sed nonne merninisti licere mihi ista probare, '
+              'quae sunt a te dicta? Refert tamen, quo modo.'),
+          Divider(),
+          Text('Lorem ipsum dolor sit amet, consectetur adipiscing '
+              'elit. Sed nonne merninisti licere mihi ista probare, '
+              'quae sunt a te dicta? Refert tamen, quo modo.'),
+          Divider(dashed: true),
+          Text('Lorem ipsum dolor sit amet, consectetur adipiscing '
+              'elit. Sed nonne merninisti licere mihi ista probare, '
+              'quae sunt a te dicta? Refert tamen, quo modo.'),
+        ],
+      ),
+    );
+  }
+}

@@ -1,0 +1,20 @@
+import 'package:ant_design_flutter/antdf.dart';
+
+void main() {
+  runApp(const AntApp(home: TagBasicDemo()));
+}
+
+class TagBasicDemo extends StatelessWidget {
+  const TagBasicDemo({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const AntScaffold(
+      body: Space(children: [
+        Tag(child: Text('Tag 1')),
+        Tag(child: Text('Link')),
+        Tag(child: Text('Prevent Default')),
+      ]),
+    );
+  }
+}

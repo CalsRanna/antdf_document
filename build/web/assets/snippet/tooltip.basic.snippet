@@ -1,0 +1,19 @@
+import 'package:ant_design_flutter/antdf.dart';
+
+void main() {
+  runApp(const AntApp(home: TooltipBasicDemo()));
+}
+
+class TooltipBasicDemo extends StatelessWidget {
+  const TooltipBasicDemo({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const AntScaffold(
+      body: Tooltip(
+        child: Text('Tooltip will show on mouse enter.'),
+        label: 'prompt text',
+      ),
+    );
+  }
+}

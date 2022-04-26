@@ -1,0 +1,48 @@
+import 'package:ant_design_flutter/antdf.dart';
+
+void main() {
+  runApp(const AntApp(home: CardClassicDemo()));
+}
+
+class CardClassicDemo extends StatelessWidget {
+  const CardClassicDemo({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AntScaffold(
+      body: SizedBox(
+        child: Column(
+          children: [
+            Padding(
+              child: Card(
+                child: Column(
+                  children: const [
+                    Text('Card content'),
+                    Text('Card content'),
+                    Text('Card content'),
+                  ],
+                ),
+                extra: const Text('More'),
+                title: const Text('Default size card'),
+              ),
+              padding: const EdgeInsets.only(bottom: 30.0),
+            ),
+            Card(
+              child: Column(
+                children: const [
+                  Text('Card content'),
+                  Text('Card content'),
+                  Text('Card content'),
+                ],
+              ),
+              extra: const Text('More'),
+              title: const Text('Small size card'),
+              size: AntSize.small,
+            ),
+          ],
+        ),
+        width: 300,
+      ),
+    );
+  }
+}
