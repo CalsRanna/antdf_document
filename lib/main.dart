@@ -5,6 +5,7 @@ import 'package:antdf_document/page/card.dart';
 import 'package:antdf_document/page/checkbox.dart';
 import 'package:antdf_document/page/divider.dart';
 import 'package:antdf_document/page/input.dart';
+import 'package:antdf_document/page/input_number.dart';
 import 'package:antdf_document/page/menu.dart';
 import 'package:antdf_document/page/overview.dart';
 import 'package:antdf_document/page/page_header.dart';
@@ -62,6 +63,10 @@ class MyApp extends ConsumerWidget {
         builder: (context, state) => const DividerDocument(),
       ),
       GoRoute(builder: (_, __) => const InputDocument(), path: '/input'),
+      GoRoute(
+        builder: (_, __) => const InputNumberDocument(),
+        path: '/input-number',
+      ),
       GoRoute(path: '/menu', builder: (context, state) => const MenuDocument()),
       GoRoute(path: '/overview', builder: (context, state) => const Overview()),
       GoRoute(
@@ -105,6 +110,7 @@ class MyScaffold extends ConsumerWidget {
     final ScrollController scrollController = ScrollController(
       initialScrollOffset: offset,
     );
+    const bool inProduction = bool.fromEnvironment('dart.vm.product');
     return AntScaffold(
       body: Row(
         children: <Widget>[
@@ -328,12 +334,14 @@ class MyScaffold extends ConsumerWidget {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: debug ? Colors.red_6 : Colors.blue_6,
-        child: const Icon(Icons.debug),
-        onPressed: () => ref.read(debugProvider.state).state = !debug,
-        tooltip: 'Toggle Performance Overlay',
-      ),
+      floatingActionButton: !inProduction
+          ? FloatingActionButton(
+              backgroundColor: debug ? Colors.red_6 : Colors.blue_6,
+              child: const Icon(Icons.debug),
+              onPressed: () => ref.read(debugProvider.state).state = !debug,
+              tooltip: 'Toggle Performance Overlay',
+            )
+          : null,
     );
   }
 }
