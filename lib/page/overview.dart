@@ -166,7 +166,7 @@ class Overview extends ConsumerWidget {
       'thumbnail':
           'https://gw.alipayobjects.com/zos/alicdn/HZ3meFc6W/Silder.svg',
       'title': 'Slider 滑动输入条',
-      'href': 'auto-complete',
+      'href': 'slider',
     },
     {
       'thumbnail':
@@ -410,7 +410,8 @@ class Overview extends ConsumerWidget {
         children: [
           const TypographyTitle('组件总览', level: 2),
           const Padding(
-            child: Text('antdf 为 Web 应用提供了丰富的基础 UI 组件，我们还将持续探索企业级应用的最佳 UI 实践。'),
+            child: Text(
+                'antdf 为 Web 和 PC 应用提供了丰富的基础 UI 组件，我们还将持续探索企业级应用的最佳 UI 实践。'),
             padding: EdgeInsets.symmetric(
               vertical: 14,
             ),
