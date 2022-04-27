@@ -1,0 +1,16 @@
+import 'package:ant_design_flutter/antdf.dart';
+
+void main() {
+  runApp(const AntApp(home: RadioBasicDemo()));
+}
+
+class RadioBasicDemo extends StatelessWidget {
+  const RadioBasicDemo({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const AntScaffold(
+      body: Radio(child: Text('Radio')),
+    );
+  }
+}
