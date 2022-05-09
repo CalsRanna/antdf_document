@@ -1,4 +1,5 @@
 import 'package:ant_design_flutter/antdf.dart';
+import 'package:antdf_document/page/alert.dart';
 import 'package:antdf_document/page/breadcrumb.dart';
 import 'package:antdf_document/page/button.dart';
 import 'package:antdf_document/page/card.dart';
@@ -58,6 +59,7 @@ class MyApp extends ConsumerWidget {
     ),
     routes: <GoRoute>[
       GoRoute(path: '/', redirect: (_) => '/overview'),
+      GoRoute(builder: (_, __) => const AlertDocument(), path: '/alert'),
       GoRoute(
         path: '/breadcrumb',
         builder: (context, state) => const BreadcrumbDocument(),
