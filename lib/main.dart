@@ -4,6 +4,7 @@ import 'package:antdf_document/page/button.dart';
 import 'package:antdf_document/page/card.dart';
 import 'package:antdf_document/page/checkbox.dart';
 import 'package:antdf_document/page/divider.dart';
+import 'package:antdf_document/page/image.dart';
 import 'package:antdf_document/page/input.dart';
 import 'package:antdf_document/page/input_number.dart';
 import 'package:antdf_document/page/menu.dart';
@@ -66,6 +67,7 @@ class MyApp extends ConsumerWidget {
         path: '/divider',
         builder: (context, state) => const DividerDocument(),
       ),
+      GoRoute(builder: (_, __) => const ImageDocument(), path: '/image'),
       GoRoute(builder: (_, __) => const InputDocument(), path: '/input'),
       GoRoute(
         builder: (_, __) => const InputNumberDocument(),
