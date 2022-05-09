@@ -8,23 +8,23 @@ class ImageDocument extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MyScaffold(
-      body: ListView(children: [
-        const TypographyTitle('Image 图片', level: 2),
-        const Padding(
+      body: ListView(children: const [
+        TypographyTitle('Image 图片', level: 2),
+        Padding(
           child: Text('可预览的图片。'),
           padding: EdgeInsets.symmetric(vertical: 14),
         ),
-        const TypographyTitle('何时使用', level: 3),
-        const Padding(
+        TypographyTitle('何时使用', level: 3),
+        Padding(
           child: Text('需要展示图片时使用。'),
           padding: EdgeInsets.symmetric(vertical: 14),
         ),
-        const Padding(
+        Padding(
           child: Text('加载大图时显示 loading 或加载失败时容错处理。'),
           padding: EdgeInsets.symmetric(vertical: 14),
         ),
-        const TypographyTitle('代码演示', level: 3),
-        const WidgetDemo(
+        TypographyTitle('代码演示', level: 3),
+        WidgetDemo(
           child: AntImage(
             src:
                 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
