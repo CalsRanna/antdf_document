@@ -14,6 +14,7 @@ import 'package:antdf_document/page/radio.dart';
 import 'package:antdf_document/page/select.dart';
 import 'package:antdf_document/page/slider.dart';
 import 'package:antdf_document/page/space.dart';
+import 'package:antdf_document/page/switch.dart';
 import 'package:antdf_document/page/tag.dart';
 import 'package:antdf_document/page/tooltip.dart';
 import 'package:antdf_document/page/typography.dart';
@@ -87,6 +88,7 @@ class MyApp extends ConsumerWidget {
         path: '/space',
         builder: (context, state) => const SpaceDocument(),
       ),
+      GoRoute(builder: (_, __) => const SwitchDocument(), path: '/switch'),
       GoRoute(path: '/tag', builder: (context, state) => const TagDocument()),
       GoRoute(
         path: '/tooltip',
