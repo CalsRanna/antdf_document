@@ -10,6 +10,7 @@ import 'package:antdf_document/page/image.dart';
 import 'package:antdf_document/page/input.dart';
 import 'package:antdf_document/page/input_number.dart';
 import 'package:antdf_document/page/menu.dart';
+import 'package:antdf_document/page/message.dart';
 import 'package:antdf_document/page/overview.dart';
 import 'package:antdf_document/page/page_header.dart';
 import 'package:antdf_document/page/pagination.dart';
@@ -33,6 +34,10 @@ void main() {
   runApp(ProviderScope(child: MyApp()));
 }
 
+Page<void> _page(BuildContext context, GoRouterState state, Widget page) {
+  return NoTransitionPage<void>(key: state.pageKey, child: page);
+}
+
 final debugProvider = StateProvider((ref) => false);
 
 class MyApp extends ConsumerWidget {
@@ -50,63 +55,119 @@ class MyApp extends ConsumerWidget {
   }
 
   final GoRouter _router = GoRouter(
-    errorBuilder: (context, state) => MyScaffold(
-      body: Center(
-        child: Text(
-          state.error.toString(),
-          style: const TextStyle(color: Colors.red_6),
+    errorPageBuilder: (_, state) => _page(
+      _,
+      state,
+      MyScaffold(
+        body: Center(
+          child: Text(
+            state.error.toString(),
+            style: const TextStyle(color: Colors.red_6),
+          ),
         ),
       ),
     ),
     routes: <GoRoute>[
       GoRoute(path: '/', redirect: (_) => '/overview'),
-      GoRoute(builder: (_, __) => const AlertDocument(), path: '/alert'),
       GoRoute(
+        pageBuilder: (_, state) => _page(_, state, const AlertDocument()),
+        path: '/alert',
+      ),
+      GoRoute(
+        pageBuilder: (_, state) => _page(_, state, const BreadcrumbDocument()),
         path: '/breadcrumb',
-        builder: (context, state) => const BreadcrumbDocument(),
       ),
-      GoRoute(path: '/button', builder: (_, __) => const ButtonDocument()),
-      GoRoute(path: '/card', builder: (context, state) => const CardDocument()),
-      GoRoute(builder: (_, __) => const CheckboxDocument(), path: '/checkbox'),
       GoRoute(
+        pageBuilder: (_, state) => _page(_, state, const ButtonDocument()),
+        path: '/button',
+      ),
+      GoRoute(
+        pageBuilder: (_, state) => _page(_, state, const CardDocument()),
+        path: '/card',
+      ),
+      GoRoute(
+        pageBuilder: (_, state) => _page(_, state, const CheckboxDocument()),
+        path: '/checkbox',
+      ),
+      GoRoute(
+        pageBuilder: (_, state) => _page(_, state, const DividerDocument()),
         path: '/divider',
-        builder: (context, state) => const DividerDocument(),
       ),
-      GoRoute(builder: (_, __) => const DrawerDocument(), path: '/drawer'),
-      GoRoute(builder: (_, __) => const ImageDocument(), path: '/image'),
-      GoRoute(builder: (_, __) => const InputDocument(), path: '/input'),
       GoRoute(
-        builder: (_, __) => const InputNumberDocument(),
+        pageBuilder: (_, state) => _page(_, state, const DrawerDocument()),
+        path: '/drawer',
+      ),
+      GoRoute(
+        pageBuilder: (_, state) => _page(_, state, const ImageDocument()),
+        path: '/image',
+      ),
+      GoRoute(
+        pageBuilder: (_, state) => _page(_, state, const InputDocument()),
+        path: '/input',
+      ),
+      GoRoute(
+        pageBuilder: (_, state) => _page(_, state, const InputNumberDocument()),
         path: '/input-number',
       ),
-      GoRoute(path: '/menu', builder: (context, state) => const MenuDocument()),
-      GoRoute(path: '/overview', builder: (context, state) => const Overview()),
       GoRoute(
-        path: '/page-header',
-        builder: (context, state) => const PageHeaderDocument(),
+        pageBuilder: (_, state) => _page(_, state, const MenuDocument()),
+        path: '/menu',
       ),
       GoRoute(
-        builder: (_, __) => const PaginationDocument(),
+        pageBuilder: (_, state) => _page(_, state, const MessageDocument()),
+        path: '/message',
+      ),
+      GoRoute(
+        pageBuilder: (_, state) => _page(_, state, const Overview()),
+        path: '/overview',
+      ),
+      GoRoute(
+        pageBuilder: (_, state) => _page(_, state, const PageHeaderDocument()),
+        path: '/page-header',
+      ),
+      GoRoute(
+        pageBuilder: (_, state) => _page(_, state, const PaginationDocument()),
         path: '/pagination',
       ),
-      GoRoute(builder: (_, __) => const RadioDocument(), path: '/radio'),
-      GoRoute(builder: (_, __) => const SelectDocument(), path: '/select'),
-      GoRoute(builder: (_, __) => const SliderDocument(), path: '/slider'),
       GoRoute(
+        pageBuilder: (_, state) => _page(_, state, const RadioDocument()),
+        path: '/radio',
+      ),
+      GoRoute(
+        pageBuilder: (_, state) => _page(_, state, const SelectDocument()),
+        path: '/select',
+      ),
+      GoRoute(
+        pageBuilder: (_, state) => _page(_, state, const SliderDocument()),
+        path: '/slider',
+      ),
+      GoRoute(
+        pageBuilder: (_, state) => _page(_, state, const SpaceDocument()),
         path: '/space',
-        builder: (context, state) => const SpaceDocument(),
       ),
-      GoRoute(builder: (_, __) => const SwitchDocument(), path: '/switch'),
-      GoRoute(builder: (_, __) => const TableDocument(), path: '/table'),
-      GoRoute(builder: (_, __) => const TabsDocument(), path: '/tabs'),
-      GoRoute(path: '/tag', builder: (context, state) => const TagDocument()),
       GoRoute(
+        pageBuilder: (_, state) => _page(_, state, const SwitchDocument()),
+        path: '/switch',
+      ),
+      GoRoute(
+        pageBuilder: (_, state) => _page(_, state, const TableDocument()),
+        path: '/table',
+      ),
+      GoRoute(
+        pageBuilder: (_, state) => _page(_, state, const TabsDocument()),
+        path: '/tabs',
+      ),
+      GoRoute(
+        pageBuilder: (_, state) => _page(_, state, const TagDocument()),
+        path: '/tag',
+      ),
+      GoRoute(
+        pageBuilder: (_, state) => _page(_, state, const TooltipDocument()),
         path: '/tooltip',
-        builder: (context, state) => const TooltipDocument(),
       ),
       GoRoute(
+        pageBuilder: (_, state) => _page(_, state, const TypographyDocument()),
         path: '/typography',
-        builder: (context, state) => const TypographyDocument(),
       ),
     ],
   );
