@@ -5,6 +5,7 @@ import 'package:antdf_document/page/button.dart';
 import 'package:antdf_document/page/card.dart';
 import 'package:antdf_document/page/checkbox.dart';
 import 'package:antdf_document/page/divider.dart';
+import 'package:antdf_document/page/drawer.dart';
 import 'package:antdf_document/page/image.dart';
 import 'package:antdf_document/page/input.dart';
 import 'package:antdf_document/page/input_number.dart';
@@ -71,6 +72,7 @@ class MyApp extends ConsumerWidget {
         path: '/divider',
         builder: (context, state) => const DividerDocument(),
       ),
+      GoRoute(builder: (_, __) => const DrawerDocument(), path: '/drawer'),
       GoRoute(builder: (_, __) => const ImageDocument(), path: '/image'),
       GoRoute(builder: (_, __) => const InputDocument(), path: '/input'),
       GoRoute(
@@ -153,8 +155,10 @@ class MyScaffold extends ConsumerWidget {
                         const FlutterLogo(
                           size: 40,
                         ),
-                        Text('Ant Design Flutter',
-                            style: GoogleFonts.righteous(color: Colors.blue_6))
+                        Text(
+                          'Ant Design Flutter',
+                          style: GoogleFonts.staatliches(color: Colors.blue_6),
+                        )
                       ],
                       mainAxisAlignment: MainAxisAlignment.center,
                     ),
