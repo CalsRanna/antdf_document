@@ -39,6 +39,6 @@ class MessageDocument extends StatelessWidget {
   }
 
   void _handleClick(BuildContext context) {
-    Message().info(context, content: const Text('This is a normal message'));
+    Message.info(context, content: const Text('This is a normal message'));
   }
 }
