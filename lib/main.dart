@@ -62,9 +62,23 @@ class MyApp extends ConsumerWidget {
       state,
       MyScaffold(
         body: Center(
-          child: Text(
-            state.error.toString(),
-            style: const TextStyle(color: Colors.red_6),
+          child: Column(
+            children: [
+              Row(
+                children: const [
+                  Icon(Icons.warning, color: Colors.orange_6, size: 24),
+                  SizedBox(width: 8),
+                  Text(
+                    '尚未实现',
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
+                  ),
+                ],
+                mainAxisSize: MainAxisSize.min,
+              ),
+              const SizedBox(height: 8),
+              const Text('This widget is still working in progress'),
+            ],
+            mainAxisSize: MainAxisSize.min,
           ),
         ),
       ),
