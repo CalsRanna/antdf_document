@@ -12,6 +12,7 @@ import 'package:antdf_document/page/input_number.dart';
 import 'package:antdf_document/page/menu.dart';
 import 'package:antdf_document/page/message.dart';
 import 'package:antdf_document/page/modal.dart';
+import 'package:antdf_document/page/notification.dart';
 import 'package:antdf_document/page/overview.dart';
 import 'package:antdf_document/page/page_header.dart';
 import 'package:antdf_document/page/pagination.dart';
@@ -121,6 +122,14 @@ class MyApp extends ConsumerWidget {
       GoRoute(
         pageBuilder: (_, state) => _page(_, state, const MessageDocument()),
         path: '/message',
+      ),
+      GoRoute(
+        pageBuilder: (_, state) => _page(
+          _,
+          state,
+          const NotificationDocument(),
+        ),
+        path: '/notification',
       ),
       GoRoute(
         pageBuilder: (_, state) => _page(_, state, const Overview()),
