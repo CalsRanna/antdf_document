@@ -11,6 +11,7 @@ import 'package:antdf_document/page/input.dart';
 import 'package:antdf_document/page/input_number.dart';
 import 'package:antdf_document/page/menu.dart';
 import 'package:antdf_document/page/message.dart';
+import 'package:antdf_document/page/modal.dart';
 import 'package:antdf_document/page/overview.dart';
 import 'package:antdf_document/page/page_header.dart';
 import 'package:antdf_document/page/pagination.dart';
@@ -108,6 +109,10 @@ class MyApp extends ConsumerWidget {
       GoRoute(
         pageBuilder: (_, state) => _page(_, state, const InputNumberDocument()),
         path: '/input-number',
+      ),
+      GoRoute(
+        pageBuilder: (_, state) => _page(_, state, const ModalDocument()),
+        path: '/modal',
       ),
       GoRoute(
         pageBuilder: (_, state) => _page(_, state, const MenuDocument()),
