@@ -6,6 +6,7 @@ import 'package:antdf_document/page/card.dart';
 import 'package:antdf_document/page/checkbox.dart';
 import 'package:antdf_document/page/divider.dart';
 import 'package:antdf_document/page/drawer.dart';
+import 'package:antdf_document/page/icon.dart';
 import 'package:antdf_document/page/image.dart';
 import 'package:antdf_document/page/input.dart';
 import 'package:antdf_document/page/input_number.dart';
@@ -114,6 +115,10 @@ class MyApp extends ConsumerWidget {
         path: '/drawer',
       ),
       GoRoute(
+        pageBuilder: (_, state) => _page(_, state, const IconDocument()),
+        path: '/icon',
+      ),
+      GoRoute(
         pageBuilder: (_, state) => _page(_, state, const ImageDocument()),
         path: '/image',
       ),
@@ -218,7 +223,7 @@ class MyScaffold extends ConsumerWidget {
       initialScrollOffset: offset,
     );
     const bool inProduction = bool.fromEnvironment('dart.vm.product');
-    return AntScaffold(
+    return Scaffold.floatingActionButton(
       body: Row(
         children: <Widget>[
           SizedBox(

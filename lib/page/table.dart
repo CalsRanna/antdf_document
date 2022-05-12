@@ -11,10 +11,10 @@ class TableDocument extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var columns = [
-      const AntTableColumn(title: 'Name', dataIndex: 'name', width: 128),
-      const AntTableColumn(title: 'Age', dataIndex: 'age', width: 64),
-      const AntTableColumn(title: 'Address', dataIndex: 'address'),
-      AntTableColumn(
+      const TableColumn(title: 'Name', dataIndex: 'name', width: 128),
+      const TableColumn(title: 'Age', dataIndex: 'age', width: 64),
+      const TableColumn(title: 'Address', dataIndex: 'address'),
+      TableColumn(
         title: 'Tags',
         dataIndex: 'tags',
         render: (record) {
@@ -34,18 +34,18 @@ class TableDocument extends StatelessWidget {
           );
         },
       ),
-      AntTableColumn(
+      TableColumn(
         title: 'Action',
         render: (record) => Space(
           children: [
             Button(
               child: Text('Invite ${record.name}'),
-              size: AntSize.small,
+              size: Size.small,
               type: ButtonType.text,
             ),
             const Button(
               child: Text('Delete'),
-              size: AntSize.small,
+              size: Size.small,
               type: ButtonType.text,
             ),
           ],
@@ -96,7 +96,7 @@ class TableDocument extends StatelessWidget {
         ),
         const TypographyTitle('代码演示', level: 3),
         WidgetDemo(
-          child: AntTable<_TableData>(columns: columns, dataSource: data),
+          child: Table<_TableData>(columns: columns, dataSource: data),
           description: '简单的表格，最后一列是各种操作。',
           name: '基本用法',
           snippet: 'table.basic',

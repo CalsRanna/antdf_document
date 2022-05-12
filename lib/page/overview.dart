@@ -536,7 +536,7 @@ class _WidgetThumbnail extends StatelessWidget {
             width: 182.5,
           )),
           hoverable: true,
-          size: AntSize.small,
+          size: Size.small,
           title: Text(title),
         ),
         height: 216,

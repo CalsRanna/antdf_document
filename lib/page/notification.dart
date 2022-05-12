@@ -47,7 +47,7 @@ class NotificationDocument extends StatelessWidget {
   }
 
   void _handleClick(BuildContext context) {
-    AntNotification.open(
+    Notification.open(
       context,
       description: const Text(
           'This is the content of the notification. This is the content of the notification. This is the content of the notification.'),

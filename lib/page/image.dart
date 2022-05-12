@@ -25,7 +25,7 @@ class ImageDocument extends StatelessWidget {
         ),
         TypographyTitle('代码演示', level: 3),
         WidgetDemo(
-          child: AntImage(
+          child: Image(
             src:
                 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
             width: 200,

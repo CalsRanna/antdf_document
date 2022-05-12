@@ -52,7 +52,7 @@ class CardDocument extends StatelessWidget {
                   ),
                   extra: const Text('More'),
                   title: const Text('Small size card'),
-                  size: AntSize.small,
+                  size: Size.small,
                 ),
               ],
             ),
