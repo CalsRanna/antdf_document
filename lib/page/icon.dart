@@ -66,7 +66,6 @@ class IconDocument extends StatelessWidget {
         GridView.count(
           childAspectRatio: 16 / 9,
           children: icons,
-          controller: ScrollController(),
           crossAxisCount: 6,
           mainAxisSpacing: 4,
           shrinkWrap: true,
