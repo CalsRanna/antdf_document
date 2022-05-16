@@ -1,5 +1,5 @@
 import 'package:ant_design_flutter/ant_design_flutter.dart';
-import 'package:antdf_document/main.dart';
+import 'package:antdf_document/widget/my_scaffold.dart';
 import 'package:antdf_document/widget/widget_demo.dart';
 
 class NotificationDocument extends StatelessWidget {
