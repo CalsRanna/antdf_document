@@ -1,4 +1,4 @@
-import 'package:ant_design_flutter/antdf.dart';
+import 'package:ant_design_flutter/ant_design_flutter.dart';
 import 'package:antdf_document/util/snippet.dart';
 import 'package:antdf_document/widget/clickable_icon.dart';
 import 'package:flutter_highlight/flutter_highlight.dart';
