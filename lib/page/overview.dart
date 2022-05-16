@@ -410,14 +410,17 @@ class Overview extends ConsumerWidget {
         children: [
           const TypographyTitle('组件总览', level: 2),
           const Padding(
-            child: Text(
-                'antdf 为 Web 和 PC 应用提供了丰富的基础 UI 组件，我们还将持续探索企业级应用的最佳 UI 实践。'),
             padding: EdgeInsets.symmetric(
               vertical: 14,
             ),
+            child: Text(
+                'antdf 为 Web 和 PC 应用提供了丰富的基础 UI 组件，我们还将持续探索企业级应用的最佳 UI 实践。'),
           ),
           const TypographyTitle('通用', level: 3),
           Wrap(
+            crossAxisAlignment: WrapCrossAlignment.center,
+            runSpacing: 24,
+            spacing: 24,
             children: common
                 .map((widget) => _WidgetThumbnail(
                       onTap: () => _handleTap(context, ref, widget['href']!),
@@ -425,12 +428,11 @@ class Overview extends ConsumerWidget {
                       title: widget['title']!,
                     ))
                 .toList(),
-            crossAxisAlignment: WrapCrossAlignment.center,
-            runSpacing: 24,
-            spacing: 24,
           ),
           const TypographyTitle('布局', level: 3),
           Wrap(
+            runSpacing: 24,
+            spacing: 24,
             children: layout
                 .map((widget) => _WidgetThumbnail(
                       onTap: () => _handleTap(context, ref, widget['href']!),
@@ -438,11 +440,11 @@ class Overview extends ConsumerWidget {
                       title: widget['title']!,
                     ))
                 .toList(),
-            runSpacing: 24,
-            spacing: 24,
           ),
           const TypographyTitle('导航', level: 3),
           Wrap(
+            runSpacing: 24,
+            spacing: 24,
             children: navigation
                 .map((widget) => _WidgetThumbnail(
                       onTap: () => _handleTap(context, ref, widget['href']!),
@@ -450,11 +452,11 @@ class Overview extends ConsumerWidget {
                       title: widget['title']!,
                     ))
                 .toList(),
-            runSpacing: 24,
-            spacing: 24,
           ),
           const TypographyTitle('数据录入', level: 3),
           Wrap(
+            runSpacing: 24,
+            spacing: 24,
             children: dataInput
                 .map((widget) => _WidgetThumbnail(
                       onTap: () => _handleTap(context, ref, widget['href']!),
@@ -462,11 +464,11 @@ class Overview extends ConsumerWidget {
                       title: widget['title']!,
                     ))
                 .toList(),
-            runSpacing: 24,
-            spacing: 24,
           ),
           const TypographyTitle('数据展示', level: 3),
           Wrap(
+            runSpacing: 24,
+            spacing: 24,
             children: dataPresentation
                 .map((widget) => _WidgetThumbnail(
                       onTap: () => _handleTap(context, ref, widget['href']!),
@@ -474,11 +476,11 @@ class Overview extends ConsumerWidget {
                       title: widget['title']!,
                     ))
                 .toList(),
-            runSpacing: 24,
-            spacing: 24,
           ),
           const TypographyTitle('反馈', level: 3),
           Wrap(
+            runSpacing: 24,
+            spacing: 24,
             children: feedback
                 .map((widget) => _WidgetThumbnail(
                       onTap: () => _handleTap(context, ref, widget['href']!),
@@ -486,11 +488,11 @@ class Overview extends ConsumerWidget {
                       title: widget['title']!,
                     ))
                 .toList(),
-            runSpacing: 24,
-            spacing: 24,
           ),
           const TypographyTitle('其他', level: 3),
           Wrap(
+            runSpacing: 24,
+            spacing: 24,
             children: other
                 .map((widget) => _WidgetThumbnail(
                       onTap: () => _handleTap(context, ref, widget['href']!),
@@ -498,8 +500,6 @@ class Overview extends ConsumerWidget {
                       title: widget['title']!,
                     ))
                 .toList(),
-            runSpacing: 24,
-            spacing: 24,
           ),
         ],
       ),
@@ -527,22 +527,22 @@ class _WidgetThumbnail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: onTap,
       child: SizedBox(
+        height: 216,
+        width: 182,
         child: Card(
+          hoverable: true,
+          size: Size.small,
+          title: Text(title),
           child: Align(
               child: SvgPicture.network(
             thumbnail,
             height: 145,
             width: 182.5,
           )),
-          hoverable: true,
-          size: Size.small,
-          title: Text(title),
         ),
-        height: 216,
-        width: 182,
       ),
-      onTap: onTap,
     );
   }
 }

@@ -15,7 +15,11 @@ class TypographyDocument extends StatelessWidget {
           const TypographyTitle('何时使用', level: 3),
           const TypographyTitle('代码演示', level: 3),
           WidgetDemo(
+              name: '标题组件',
+              description: '展示不同级别的标题。',
+              snippet: 'typography.title',
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
                   TypographyTitle('h1.Ant Design'),
                   TypographyTitle('h2.Ant Design', level: 2),
@@ -23,11 +27,7 @@ class TypographyDocument extends StatelessWidget {
                   TypographyTitle('h4.Ant Design', level: 4),
                   TypographyTitle('h5.Ant Design', level: 5),
                 ],
-                crossAxisAlignment: CrossAxisAlignment.start,
-              ),
-              name: '标题组件',
-              description: '展示不同级别的标题。',
-              snippet: 'typography.title'),
+              )),
         ],
       ),
     );

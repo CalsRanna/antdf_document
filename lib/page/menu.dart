@@ -12,23 +12,23 @@ class MenuDocument extends StatelessWidget {
         children: const [
           TypographyTitle('Menu 导航菜单', level: 2),
           WidgetDemo(
+            name: '缩起内嵌菜单',
+            description: '内嵌菜单可以被缩起/展开。\n你可以在Layout里查看侧边栏布局结合的完整案例。',
+            snippet: 'menu.inline_collapsed',
             child: Menu(
-              children: [
-                MenuItem(child: Text('Option 1'), name: 'option-1'),
-                MenuItem(child: Text('Option 2'), name: 'option-2'),
-                MenuItem(child: Text('Option 3'), name: 'option-3'),
-                MenuItem(child: Text('Option 4'), name: 'option-4'),
-                MenuItem(child: Text('Option 5'), name: 'option-5'),
-                MenuItem(child: Text('Option 6'), name: 'option-6'),
-              ],
               inlineCollapsed: true,
               mode: MenuMode.inline,
               selectedKeys: ['option-1'],
               theme: Theme.dark,
+              children: [
+                MenuItem(name: 'option-1', child: Text('Option 1')),
+                MenuItem(name: 'option-2', child: Text('Option 2')),
+                MenuItem(name: 'option-3', child: Text('Option 3')),
+                MenuItem(name: 'option-4', child: Text('Option 4')),
+                MenuItem(name: 'option-5', child: Text('Option 5')),
+                MenuItem(name: 'option-6', child: Text('Option 6')),
+              ],
             ),
-            name: '缩起内嵌菜单',
-            description: '内嵌菜单可以被缩起/展开。\n你可以在Layout里查看侧边栏布局结合的完整案例。',
-            snippet: 'menu.inline_collapsed',
           )
         ],
       ),

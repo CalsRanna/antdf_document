@@ -30,7 +30,12 @@ class _WidgetDemoState extends State<WidgetDemo> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+        border: Border.all(color: active ? Colors.blue_6 : Colors.gray_4),
+        borderRadius: BorderRadius.circular(2),
+      ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: const EdgeInsets.all(12.0),
@@ -44,7 +49,14 @@ class _WidgetDemoState extends State<WidgetDemo> {
             child: Text(widget.description),
           ),
           Container(
+            decoration: const BoxDecoration(
+              border: Border(
+                top: BorderSide(color: Colors.gray_4),
+              ),
+            ),
+            padding: const EdgeInsets.symmetric(vertical: 12),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const ClickableIcon(
                   label: '在DarPad中打开',
@@ -57,17 +69,16 @@ class _WidgetDemoState extends State<WidgetDemo> {
                   onTap: _handleShowSnippet,
                 ),
               ],
-              mainAxisAlignment: MainAxisAlignment.center,
             ),
-            decoration: const BoxDecoration(
-              border: Border(
-                top: BorderSide(color: Colors.gray_4),
-              ),
-            ),
-            padding: const EdgeInsets.symmetric(vertical: 12),
           ),
           active
               ? Container(
+                  decoration: const BoxDecoration(
+                    border: Border(
+                      top: BorderSide(color: Colors.gray_4),
+                    ),
+                  ),
+                  width: double.infinity,
                   child: HighlightView(
                     _snippet,
                     language: 'dart',
@@ -75,20 +86,9 @@ class _WidgetDemoState extends State<WidgetDemo> {
                     textStyle: GoogleFonts.sourceCodePro(),
                     theme: atomOneLightTheme,
                   ),
-                  decoration: const BoxDecoration(
-                    border: Border(
-                      top: BorderSide(color: Colors.gray_4),
-                    ),
-                  ),
-                  width: double.infinity,
                 )
               : const SizedBox(),
         ],
-        crossAxisAlignment: CrossAxisAlignment.start,
-      ),
-      decoration: BoxDecoration(
-        border: Border.all(color: active ? Colors.blue_6 : Colors.gray_4),
-        borderRadius: BorderRadius.circular(2),
       ),
     );
   }

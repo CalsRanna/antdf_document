@@ -64,8 +64,10 @@ class MyApp extends ConsumerWidget {
       MyScaffold(
         body: Center(
           child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               Row(
+                mainAxisSize: MainAxisSize.min,
                 children: const [
                   Icon(Icons.warning, color: Colors.orange_6, size: 24),
                   SizedBox(width: 8),
@@ -74,12 +76,10 @@ class MyApp extends ConsumerWidget {
                     style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
                   ),
                 ],
-                mainAxisSize: MainAxisSize.min,
               ),
               const SizedBox(height: 8),
               const Text('This widget is still working in progress'),
             ],
-            mainAxisSize: MainAxisSize.min,
           ),
         ),
       ),
@@ -227,11 +227,19 @@ class MyScaffold extends ConsumerWidget {
       body: Row(
         children: <Widget>[
           SizedBox(
+            width: 300,
             child: SingleChildScrollView(
+              controller: scrollController,
               child: Column(
                 children: [
                   Container(
+                    decoration: const BoxDecoration(
+                      border: Border(right: BorderSide(color: Colors.gray_4)),
+                      color: Colors.white,
+                    ),
+                    padding: const EdgeInsets.symmetric(vertical: 16),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SvgPicture.network(
                           'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
@@ -254,176 +262,9 @@ class MyScaffold extends ConsumerWidget {
                           style: GoogleFonts.staatliches(color: Colors.blue_6),
                         )
                       ],
-                      mainAxisAlignment: MainAxisAlignment.center,
                     ),
-                    decoration: const BoxDecoration(
-                      border: Border(right: BorderSide(color: Colors.gray_4)),
-                      color: Colors.white,
-                    ),
-                    padding: const EdgeInsets.symmetric(vertical: 16),
                   ),
                   Menu(
-                    children: const [
-                      MenuItem(child: Text('组件总览'), name: 'overview'),
-                      MenuItemGroup(
-                        children: [
-                          MenuItem(child: Text('Button 按钮'), name: 'button'),
-                          MenuItem(child: Text('Icon 图标'), name: 'icon'),
-                          MenuItem(
-                            child: Text('Typography 排版'),
-                            name: 'typography',
-                          ),
-                        ],
-                        label: Text('通用'),
-                      ),
-                      MenuItemGroup(
-                        children: [
-                          MenuItem(child: Text('Divider 分割线'), name: 'divider'),
-                          MenuItem(child: Text('Grid 栅格'), name: 'grid'),
-                          MenuItem(child: Text('Layout 布局'), name: 'layout'),
-                          MenuItem(child: Text('Space 间隔'), name: 'space'),
-                        ],
-                        label: Text('布局'),
-                      ),
-                      MenuItemGroup(
-                        children: [
-                          MenuItem(child: Text('Affix 固钉'), name: 'affix'),
-                          MenuItem(
-                            child: Text('Breadcrumb 面包屑'),
-                            name: 'breadcrumb',
-                          ),
-                          MenuItem(
-                              child: Text('Dropdown 下拉菜单'), name: 'dropdown'),
-                          MenuItem(child: Text('Menu 导航菜单'), name: 'menu'),
-                          MenuItem(
-                            child: Text('PageHeader 页头'),
-                            name: 'page-header',
-                          ),
-                          MenuItem(
-                            child: Text('Pagination 分页'),
-                            name: 'pagination',
-                          ),
-                          MenuItem(child: Text('Steps 步骤条'), name: 'steps'),
-                        ],
-                        label: Text('导航'),
-                      ),
-                      MenuItemGroup(
-                        children: [
-                          MenuItem(
-                            child: Text('AutoComplete 自动完成'),
-                            name: 'auto-complete',
-                          ),
-                          MenuItem(
-                              child: Text('Cascader 级联选择'), name: 'cascader'),
-                          MenuItem(
-                              child: Text('Checkbox 多选款'), name: 'checkbox'),
-                          MenuItem(
-                              child: Text('DatePicker 日期选择器'),
-                              name: 'date-picker'),
-                          MenuItem(child: Text('Form 表单'), name: 'form'),
-                          MenuItem(child: Text('Input 输入框'), name: 'input'),
-                          MenuItem(
-                            child: Text('InputNumber 数字输入框'),
-                            name: 'input-number',
-                          ),
-                          MenuItem(
-                              child: Text('Mentions 提及'), name: 'mentions'),
-                          MenuItem(child: Text('Radio 单选框'), name: 'radio'),
-                          MenuItem(child: Text('Rate 评分'), name: 'rate'),
-                          MenuItem(child: Text('Select 选择器'), name: 'select'),
-                          MenuItem(child: Text('Slider 滑动输入条'), name: 'slider'),
-                          MenuItem(child: Text('Switch 开关'), name: 'switch'),
-                          MenuItem(
-                            child: Text('TimePicker 时间选择器'),
-                            name: 'time-picker',
-                          ),
-                          MenuItem(
-                              child: Text('Transfer 穿梭框'), name: 'transfer'),
-                          MenuItem(
-                            child: Text('TreeSelect 树选择器'),
-                            name: 'tree-select',
-                          ),
-                          MenuItem(child: Text('Upload 上传'), name: 'upload'),
-                        ],
-                        label: Text('数据录入'),
-                      ),
-                      MenuItemGroup(
-                        children: [
-                          MenuItem(child: Text('Avatar 头像'), name: 'avatar'),
-                          MenuItem(child: Text('Badge 徽标数'), name: 'badge'),
-                          MenuItem(
-                              child: Text('Calendar 日历'), name: 'calendar'),
-                          MenuItem(child: Text('Card 卡片'), name: 'card'),
-                          MenuItem(
-                              child: Text('Carousel 走马灯'), name: 'carousel'),
-                          MenuItem(
-                              child: Text('Collapse 折叠面板'), name: 'collapse'),
-                          MenuItem(child: Text('Comment 评论'), name: 'comment'),
-                          MenuItem(
-                            child: Text('Descriptions 描述列表'),
-                            name: 'descriptions',
-                          ),
-                          MenuItem(child: Text('Empty 空状态'), name: 'empty'),
-                          MenuItem(child: Text('Image 图片'), name: 'image'),
-                          MenuItem(child: Text('List 列表'), name: 'list'),
-                          MenuItem(
-                              child: Text('Popover 气泡卡片'), name: 'popover'),
-                          MenuItem(
-                            child: Text('Segmented 分段控制器'),
-                            name: 'segmented',
-                          ),
-                          MenuItem(
-                            child: Text('Statistic 统计数值'),
-                            name: 'statistic',
-                          ),
-                          MenuItem(child: Text('Table 表格'), name: 'table'),
-                          MenuItem(child: Text('Tabs 标签页'), name: 'tabs'),
-                          MenuItem(child: Text('Tag 标签'), name: 'tag'),
-                          MenuItem(
-                              child: Text('Timeline 时间轴'), name: 'timeline'),
-                          MenuItem(
-                              child: Text('Tooltip 文字提示'), name: 'tooltip'),
-                          MenuItem(child: Text('Tree 树形控件'), name: 'tree'),
-                        ],
-                        label: Text('数据展示'),
-                      ),
-                      MenuItemGroup(
-                        children: [
-                          MenuItem(child: Text('Alert 警告提示'), name: 'alert'),
-                          MenuItem(child: Text('Drawer 抽屉'), name: 'drawer'),
-                          MenuItem(
-                              child: Text('Message 全局提示'), name: 'message'),
-                          MenuItem(child: Text('Modal 对话框'), name: 'modal'),
-                          MenuItem(
-                            child: Text('Notification 通知提醒框'),
-                            name: 'notification',
-                          ),
-                          MenuItem(
-                            child: Text('Popconfirm 气泡确认框'),
-                            name: 'popconfirm',
-                          ),
-                          MenuItem(
-                              child: Text('Progress 进度条'), name: 'progress'),
-                          MenuItem(child: Text('Result 结果'), name: 'result'),
-                          MenuItem(
-                              child: Text('Skeleton 骨架屏'), name: 'skeleton'),
-                          MenuItem(child: Text('Spin 加载中'), name: 'spin'),
-                        ],
-                        label: Text('反馈'),
-                      ),
-                      MenuItemGroup(
-                        children: [
-                          MenuItem(child: Text('Anchor 锚点'), name: 'anchor'),
-                          MenuItem(
-                              child: Text('BackTop 回到顶部'), name: 'back-top'),
-                          MenuItem(
-                            child: Text('ConfigProvider 全局化配置'),
-                            name: 'config-provider',
-                          ),
-                        ],
-                        label: Text('其他'),
-                      ),
-                    ],
                     onClick: (item, name) {
                       ref.read(currentMenuNameProvider.state).state = name;
                       ref.read(menuOffsetProvider.state).state =
@@ -431,19 +272,193 @@ class MyScaffold extends ConsumerWidget {
                       context.go('/$name');
                     },
                     selectedKeys: [current],
+                    children: const [
+                      MenuItem(name: 'overview', child: Text('组件总览')),
+                      MenuItemGroup(
+                        label: Text('通用'),
+                        children: [
+                          MenuItem(name: 'button', child: Text('Button 按钮')),
+                          MenuItem(name: 'icon', child: Text('Icon 图标')),
+                          MenuItem(
+                            name: 'typography',
+                            child: Text('Typography 排版'),
+                          ),
+                        ],
+                      ),
+                      MenuItemGroup(
+                        label: Text('布局'),
+                        children: [
+                          MenuItem(name: 'divider', child: Text('Divider 分割线')),
+                          MenuItem(name: 'grid', child: Text('Grid 栅格')),
+                          MenuItem(name: 'layout', child: Text('Layout 布局')),
+                          MenuItem(name: 'space', child: Text('Space 间隔')),
+                        ],
+                      ),
+                      MenuItemGroup(
+                        label: Text('导航'),
+                        children: [
+                          MenuItem(name: 'affix', child: Text('Affix 固钉')),
+                          MenuItem(
+                            name: 'breadcrumb',
+                            child: Text('Breadcrumb 面包屑'),
+                          ),
+                          MenuItem(
+                              name: 'dropdown',
+                              child: Text('Dropdown 下拉菜单')),
+                          MenuItem(name: 'menu', child: Text('Menu 导航菜单')),
+                          MenuItem(
+                            name: 'page-header',
+                            child: Text('PageHeader 页头'),
+                          ),
+                          MenuItem(
+                            name: 'pagination',
+                            child: Text('Pagination 分页'),
+                          ),
+                          MenuItem(name: 'steps', child: Text('Steps 步骤条')),
+                        ],
+                      ),
+                      MenuItemGroup(
+                        label: Text('数据录入'),
+                        children: [
+                          MenuItem(
+                            name: 'auto-complete',
+                            child: Text('AutoComplete 自动完成'),
+                          ),
+                          MenuItem(
+                              name: 'cascader',
+                              child: Text('Cascader 级联选择')),
+                          MenuItem(
+                              name: 'checkbox',
+                              child: Text('Checkbox 多选款')),
+                          MenuItem(
+                              name: 'date-picker',
+                              child: Text('DatePicker 日期选择器')),
+                          MenuItem(name: 'form', child: Text('Form 表单')),
+                          MenuItem(name: 'input', child: Text('Input 输入框')),
+                          MenuItem(
+                            name: 'input-number',
+                            child: Text('InputNumber 数字输入框'),
+                          ),
+                          MenuItem(
+                              name: 'mentions',
+                              child: Text('Mentions 提及')),
+                          MenuItem(name: 'radio', child: Text('Radio 单选框')),
+                          MenuItem(name: 'rate', child: Text('Rate 评分')),
+                          MenuItem(name: 'select', child: Text('Select 选择器')),
+                          MenuItem(name: 'slider', child: Text('Slider 滑动输入条')),
+                          MenuItem(name: 'switch', child: Text('Switch 开关')),
+                          MenuItem(
+                            name: 'time-picker',
+                            child: Text('TimePicker 时间选择器'),
+                          ),
+                          MenuItem(
+                              name: 'transfer',
+                              child: Text('Transfer 穿梭框')),
+                          MenuItem(
+                            name: 'tree-select',
+                            child: Text('TreeSelect 树选择器'),
+                          ),
+                          MenuItem(name: 'upload', child: Text('Upload 上传')),
+                        ],
+                      ),
+                      MenuItemGroup(
+                        label: Text('数据展示'),
+                        children: [
+                          MenuItem(name: 'avatar', child: Text('Avatar 头像')),
+                          MenuItem(name: 'badge', child: Text('Badge 徽标数')),
+                          MenuItem(
+                              name: 'calendar',
+                              child: Text('Calendar 日历')),
+                          MenuItem(name: 'card', child: Text('Card 卡片')),
+                          MenuItem(
+                              name: 'carousel',
+                              child: Text('Carousel 走马灯')),
+                          MenuItem(
+                              name: 'collapse',
+                              child: Text('Collapse 折叠面板')),
+                          MenuItem(name: 'comment', child: Text('Comment 评论')),
+                          MenuItem(
+                            name: 'descriptions',
+                            child: Text('Descriptions 描述列表'),
+                          ),
+                          MenuItem(name: 'empty', child: Text('Empty 空状态')),
+                          MenuItem(name: 'image', child: Text('Image 图片')),
+                          MenuItem(name: 'list', child: Text('List 列表')),
+                          MenuItem(
+                              name: 'popover',
+                              child: Text('Popover 气泡卡片')),
+                          MenuItem(
+                            name: 'segmented',
+                            child: Text('Segmented 分段控制器'),
+                          ),
+                          MenuItem(
+                            name: 'statistic',
+                            child: Text('Statistic 统计数值'),
+                          ),
+                          MenuItem(name: 'table', child: Text('Table 表格')),
+                          MenuItem(name: 'tabs', child: Text('Tabs 标签页')),
+                          MenuItem(name: 'tag', child: Text('Tag 标签')),
+                          MenuItem(
+                              name: 'timeline',
+                              child: Text('Timeline 时间轴')),
+                          MenuItem(
+                              name: 'tooltip',
+                              child: Text('Tooltip 文字提示')),
+                          MenuItem(name: 'tree', child: Text('Tree 树形控件')),
+                        ],
+                      ),
+                      MenuItemGroup(
+                        label: Text('反馈'),
+                        children: [
+                          MenuItem(name: 'alert', child: Text('Alert 警告提示')),
+                          MenuItem(name: 'drawer', child: Text('Drawer 抽屉')),
+                          MenuItem(
+                              name: 'message',
+                              child: Text('Message 全局提示')),
+                          MenuItem(name: 'modal', child: Text('Modal 对话框')),
+                          MenuItem(
+                            name: 'notification',
+                            child: Text('Notification 通知提醒框'),
+                          ),
+                          MenuItem(
+                            name: 'popconfirm',
+                            child: Text('Popconfirm 气泡确认框'),
+                          ),
+                          MenuItem(
+                              name: 'progress',
+                              child: Text('Progress 进度条')),
+                          MenuItem(name: 'result', child: Text('Result 结果')),
+                          MenuItem(
+                              name: 'skeleton',
+                              child: Text('Skeleton 骨架屏')),
+                          MenuItem(name: 'spin', child: Text('Spin 加载中')),
+                        ],
+                      ),
+                      MenuItemGroup(
+                        label: Text('其他'),
+                        children: [
+                          MenuItem(name: 'anchor', child: Text('Anchor 锚点')),
+                          MenuItem(
+                              name: 'back-top',
+                              child: Text('BackTop 回到顶部')),
+                          MenuItem(
+                            name: 'config-provider',
+                            child: Text('ConfigProvider 全局化配置'),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ],
               ),
-              controller: scrollController,
             ),
-            width: 300,
           ),
           Expanded(
             child: Container(
-              child: body,
               color: Colors.white,
               margin: const EdgeInsets.all(8),
               padding: const EdgeInsets.all(12),
+              child: body,
             ),
           ),
         ],
@@ -451,9 +466,9 @@ class MyScaffold extends ConsumerWidget {
       floatingActionButton: !inProduction
           ? FloatingActionButton(
               backgroundColor: debug ? Colors.red_6 : Colors.blue_6,
-              child: const Icon(Icons.debug),
               onPressed: () => ref.read(debugProvider.state).state = !debug,
               tooltip: 'Toggle Performance Overlay',
+              child: const Icon(Icons.debug),
             )
           : null,
     );

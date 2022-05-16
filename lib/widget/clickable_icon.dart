@@ -22,8 +22,13 @@ class _ClickableIconState extends State<ClickableIcon> {
   @override
   Widget build(BuildContext context) {
     return Tooltip(
+      label: widget.label,
       child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        onEnter: (_) => setState(() => hovered = true),
+        onExit: (_) => setState(() => hovered = false),
         child: GestureDetector(
+          onTap: widget.onTap,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: IconTheme.merge(
@@ -31,13 +36,8 @@ class _ClickableIconState extends State<ClickableIcon> {
               data: IconThemeData(color: hovered ? Colors.black : null),
             ),
           ),
-          onTap: widget.onTap,
         ),
-        cursor: SystemMouseCursors.click,
-        onEnter: (_) => setState(() => hovered = true),
-        onExit: (_) => setState(() => hovered = false),
       ),
-      label: widget.label,
     );
   }
 }

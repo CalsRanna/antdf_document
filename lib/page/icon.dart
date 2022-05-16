@@ -59,28 +59,28 @@ class IconDocument extends StatelessWidget {
       body: ListView(children: [
         const TypographyTitle('Icon 图标', level: 2),
         const Padding(
-          child: Text('语义化的矢量图形。'),
           padding: EdgeInsets.symmetric(vertical: 14),
+          child: Text('语义化的矢量图形。'),
         ),
         const TypographyTitle('图标列表', level: 3),
         GridView.count(
           childAspectRatio: 16 / 9,
-          children: icons,
           crossAxisCount: 6,
           mainAxisSpacing: 4,
           shrinkWrap: true,
+          children: icons,
         ),
         const TypographyTitle('代码演示', level: 3),
         const WidgetDemo(
+          description: '最简单的用法，也可以通过设置spin属性来实现动画旋转效果。',
+          name: '基本',
+          snippet: 'icon.basic',
           child: Space(children: [
             Icon(Icons.success),
             Icon(Icons.info),
             Icon(Icons.loading, spin: true),
             Icon(Icons.debug, rotate: 180),
           ]),
-          description: '最简单的用法，也可以通过设置spin属性来实现动画旋转效果。',
-          name: '基本',
-          snippet: 'icon.basic',
         ),
       ]),
     );
@@ -104,8 +104,16 @@ class __IconCardState extends State<_IconCard> {
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      onEnter: (_) => setState(() => hovered = true),
+      onExit: (_) => setState(() => hovered = false),
       child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(2),
+          color: hovered ? Colors.blue_6 : Colors.transparent,
+        ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
               widget.icon,
@@ -118,16 +126,8 @@ class __IconCardState extends State<_IconCard> {
               style: TextStyle(color: hovered ? Colors.white : null),
             )
           ],
-          mainAxisAlignment: MainAxisAlignment.center,
-        ),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(2),
-          color: hovered ? Colors.blue_6 : Colors.transparent,
         ),
       ),
-      cursor: SystemMouseCursors.click,
-      onEnter: (_) => setState(() => hovered = true),
-      onExit: (_) => setState(() => hovered = false),
     );
   }
 }

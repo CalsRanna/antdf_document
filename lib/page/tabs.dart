@@ -11,32 +11,35 @@ class TabsDocument extends StatelessWidget {
       body: ListView(children: const [
         TypographyTitle('Tabs 标签页', level: 2),
         Padding(
-          child: Text('选项卡切换组件。'),
           padding: EdgeInsets.symmetric(vertical: 14),
+          child: Text('选项卡切换组件。'),
         ),
         TypographyTitle('何时使用', level: 3),
         Padding(
+          padding: EdgeInsets.symmetric(vertical: 14),
           child: Text('提供平级的区域将大块内容进行收纳和展现，保持界面整洁。'),
-          padding: EdgeInsets.symmetric(vertical: 14),
         ),
         Padding(
+          padding: EdgeInsets.symmetric(vertical: 14),
           child: Text('Ant Design 依次提供了三级选项卡，分别用于不同的场景。'),
-          padding: EdgeInsets.symmetric(vertical: 14),
         ),
         Padding(
+          padding: EdgeInsets.symmetric(vertical: 14),
           child: Text('卡片式的页签，提供可关闭的样式，常用于容器顶部。'),
-          padding: EdgeInsets.symmetric(vertical: 14),
         ),
         Padding(
+          padding: EdgeInsets.symmetric(vertical: 14),
           child: Text('既可用于容器顶部，也可用于容器内部，是最通用的 Tabs。'),
-          padding: EdgeInsets.symmetric(vertical: 14),
         ),
         Padding(
-          child: Text('Radio.Button 可作为更次级的页签来使用。'),
           padding: EdgeInsets.symmetric(vertical: 14),
+          child: Text('Radio.Button 可作为更次级的页签来使用。'),
         ),
         TypographyTitle('代码演示', level: 3),
         WidgetDemo(
+          description: '默认选中第一项。',
+          name: '基本',
+          snippet: 'tabs.basic',
           child: Tabs(children: [
             TabPane(
               name: '1',
@@ -54,9 +57,6 @@ class TabsDocument extends StatelessWidget {
               child: Text('Content of Tab Pane 3'),
             ),
           ]),
-          description: '默认选中第一项。',
-          name: '基本',
-          snippet: 'tabs.basic',
         ),
       ]),
     );

@@ -11,23 +11,23 @@ class BreadcrumbDocument extends StatelessWidget {
       body: ListView(children: const [
         TypographyTitle('Breadcrumb 面包屑', level: 2),
         WidgetDemo(
-          child: Breadcrumb(children: [
-            BreadcrumbItem(
-              child: Text('首页'),
-              href: '#1',
-            ),
-            BreadcrumbItem(
-              child: Text('列表页'),
-              href: '#2',
-            ),
-            BreadcrumbItem(
-              child: Text('详情页'),
-              href: '#3',
-            ),
-          ]),
           description: '最简单的用法。',
           name: '基本',
           snippet: 'breadcrumb.basic',
+          child: Breadcrumb(children: [
+            BreadcrumbItem(
+              href: '#1',
+              child: Text('首页'),
+            ),
+            BreadcrumbItem(
+              href: '#2',
+              child: Text('列表页'),
+            ),
+            BreadcrumbItem(
+              href: '#3',
+              child: Text('详情页'),
+            ),
+          ]),
         ),
       ]),
     );

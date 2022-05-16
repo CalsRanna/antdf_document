@@ -11,24 +11,24 @@ class InputDocument extends StatelessWidget {
       body: ListView(children: const [
         TypographyTitle('Input 输入框', level: 2),
         Padding(
-          child: Text('通过鼠标或键盘输入内容，是最基础的表单域的包装。'),
           padding: EdgeInsets.symmetric(vertical: 14),
+          child: Text('通过鼠标或键盘输入内容，是最基础的表单域的包装。'),
         ),
         TypographyTitle('何时使用', level: 3),
         Padding(
-          child: Text('需要用户输入表单域内容时。'),
           padding: EdgeInsets.symmetric(vertical: 14),
+          child: Text('需要用户输入表单域内容时。'),
         ),
         Padding(
-          child: Text('提供组合型输入框，带搜索的输入框，还可以进行大小选择。'),
           padding: EdgeInsets.symmetric(vertical: 14),
+          child: Text('提供组合型输入框，带搜索的输入框，还可以进行大小选择。'),
         ),
         TypographyTitle('代码演示', level: 3),
         WidgetDemo(
-          child: Input(placeholder: 'Basic usage'),
           description: '基本使用。',
           name: '基本使用',
           snippet: 'input.basic',
+          child: Input(placeholder: 'Basic usage'),
         ),
       ]),
     );

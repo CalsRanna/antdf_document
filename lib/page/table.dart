@@ -23,12 +23,12 @@ class TableDocument extends StatelessWidget {
           return Space(
             children: tags
                 .map((tag) => Tag(
-                      child: Text(tag.toUpperCase()),
                       color: tag == 'loser'
                           ? Colors.volcano_1
                           : tag.length > 5
                               ? Colors.geekblue_1
                               : Colors.green_1,
+                      child: Text(tag.toUpperCase()),
                     ))
                 .toList(),
           );
@@ -39,14 +39,14 @@ class TableDocument extends StatelessWidget {
         render: (record) => Space(
           children: [
             Button(
-              child: Text('Invite ${record.name}'),
               size: Size.small,
               type: ButtonType.text,
+              child: Text('Invite ${record.name}'),
             ),
             const Button(
-              child: Text('Delete'),
               size: Size.small,
               type: ButtonType.text,
+              child: Text('Delete'),
             ),
           ],
         ),
@@ -74,17 +74,17 @@ class TableDocument extends StatelessWidget {
       body: ListView(children: [
         const TypographyTitle('Table 表格', level: 2),
         const Padding(
-          child: Text('展示行列数据。'),
           padding: EdgeInsets.symmetric(vertical: 14),
+          child: Text('展示行列数据。'),
         ),
         const TypographyTitle('何时使用', level: 3),
         const Padding(
-          child: Text('当有大量结构化的数据需要展现时；'),
           padding: EdgeInsets.symmetric(vertical: 14),
+          child: Text('当有大量结构化的数据需要展现时；'),
         ),
         const Padding(
-          child: Text('当需要对数据进行排序、搜索、分页、自定义操作等复杂行为时。'),
           padding: EdgeInsets.symmetric(vertical: 14),
+          child: Text('当需要对数据进行排序、搜索、分页、自定义操作等复杂行为时。'),
         ),
         const TypographyTitle('如何使用', level: 3),
         HighlightView(
@@ -96,10 +96,10 @@ class TableDocument extends StatelessWidget {
         ),
         const TypographyTitle('代码演示', level: 3),
         WidgetDemo(
-          child: Table<_TableData>(columns: columns, dataSource: data),
           description: '简单的表格，最后一列是各种操作。',
           name: '基本用法',
           snippet: 'table.basic',
+          child: Table<_TableData>(columns: columns, dataSource: data),
         ),
       ]),
     );
