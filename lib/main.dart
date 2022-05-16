@@ -14,6 +14,7 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     var debug = ref.watch(debugProvider);
+
     return AntApp.router(
       routeInformationParser: router.routeInformationParser,
       routerDelegate: router.routerDelegate,

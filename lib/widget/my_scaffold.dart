@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:ant_design_flutter/ant_design_flutter.dart';
 import 'package:antdf_document/provider.dart/current_menu_name.dart';
 import 'package:antdf_document/provider.dart/debug.dart';
@@ -250,11 +252,18 @@ class MyScaffold extends ConsumerWidget {
       floatingActionButton: !inProduction
           ? FloatingActionButton(
               backgroundColor: debug ? Colors.red_6 : Colors.blue_6,
-              onPressed: () => ref.read(debugProvider.state).state = !debug,
+              onPressed: () => _handlePress(ref),
               tooltip: 'Toggle Performance Overlay',
               child: const Icon(Icons.debug),
             )
           : null,
     );
+  }
+
+  void _handlePress(WidgetRef ref) {
+    if (Platform.isWindows || Platform.isMacOS) {
+      var debug = ref.watch(debugProvider);
+      ref.read(debugProvider.state).state = !debug;
+    }
   }
 }
