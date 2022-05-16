@@ -406,17 +406,31 @@ class Overview extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    var title = const TypographyTitle('组件总览', level: 2);
+
+    var description = const Padding(
+      padding: EdgeInsets.symmetric(vertical: 14),
+      child: Text('antdf 为 PC 应用提供了丰富的基础 UI 组件，我们还将持续探索企业级应用的最佳 UI 实践。'),
+    );
+
+    var alert = const Alert(
+      message: Text('并不建议在除 PC 和 Web 之外的平台使用 antdf ，即使是 Web 平台，也不是第一设计目标。'),
+      icon: Icon(Icons.warning),
+    );
+
+    var tip = const Alert(
+      message: Text('本站用 antdf 编写，并编译打包上传，未进行其他额外处理。'),
+      icon: Icon(Icons.warning),
+    );
+
     return MyScaffold(
       body: ListView(
         children: [
-          const TypographyTitle('组件总览', level: 2),
-          const Padding(
-            padding: EdgeInsets.symmetric(
-              vertical: 14,
-            ),
-            child: Text(
-                'antdf 为 Web 和 PC 应用提供了丰富的基础 UI 组件，我们还将持续探索企业级应用的最佳 UI 实践。'),
-          ),
+          title,
+          description,
+          alert,
+          const SizedBox(height: 16),
+          tip,
           const TypographyTitle('通用', level: 3),
           Wrap(
             crossAxisAlignment: WrapCrossAlignment.center,
