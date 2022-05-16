@@ -1,4 +1,4 @@
-import 'package:ant_design_flutter/antdf.dart';
+import 'package:ant_design_flutter/ant_design_flutter.dart';
 
 void main() {
   runApp(const AntApp(home: NotificationBasicDemo()));
@@ -9,7 +9,7 @@ class NotificationBasicDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AntScaffold(
+    return Scaffold(
       body: Button(
         child: const Text('Open the notification box'),
         onClick: () => _handleClick(context),
@@ -19,7 +19,7 @@ class NotificationBasicDemo extends StatelessWidget {
   }
 
   void _handleClick(BuildContext context) {
-    AntNotification.open(
+    Notification.open(
       context,
       description: const Text(
           'This is the content of the notification. This is the content of the notification. This is the content of the notification.'),

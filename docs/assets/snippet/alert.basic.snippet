@@ -1,4 +1,4 @@
-import 'package:ant_design_flutter/antdf.dart';
+import 'package:ant_design_flutter/ant_design_flutter.dart';
 
 void main() {
   runApp(const AntApp(home: AlertBasicDemo()));
@@ -9,7 +9,7 @@ class AlertBasicDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const AntScaffold(
+    return const Scaffold(
       body: Alert(message: Text('Success Text'), type: Status.success),
     );
   }

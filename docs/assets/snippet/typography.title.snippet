@@ -1,4 +1,4 @@
-import 'package:ant_design_flutter/antdf.dart';
+import 'package:ant_design_flutter/ant_design_flutter.dart';
 
 void main() {
   runApp(const AntApp(home: TypographyTitleDemo()));
@@ -9,7 +9,7 @@ class TypographyTitleDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AntScaffold(
+    return Scaffold(
       body: Column(
         children: const [
           TypographyTitle('h1.Ant Design')

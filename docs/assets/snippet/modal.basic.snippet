@@ -1,4 +1,4 @@
-import 'package:ant_design_flutter/antdf.dart';
+import 'package:ant_design_flutter/ant_design_flutter.dart';
 
 void main() {
   runApp(const AntApp(home: ModalBasicDemo()));
@@ -9,7 +9,7 @@ class ModalBasicDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AntScaffold(
+    return Scaffold(
       body: Button(
         child: const Text('Open Modal'),
         onClick: () => _handleClick(context),
