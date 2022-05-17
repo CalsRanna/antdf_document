@@ -38,7 +38,7 @@ dependencies:
   google_fonts: ^2.3.1
   flutter_svg: ^1.0.3
   ant_design_flutter:
-    path: D:\Code\ant_design_flutter
+    path: /Users/cals/Code/ant_design_flutter
 
 dev_dependencies:
   flutter_test:

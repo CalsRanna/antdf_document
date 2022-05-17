@@ -56,6 +56,10 @@ class ButtonDocument extends StatelessWidget {
                   ButtonSizeDemo(),
                   SizedBox(height: 16),
                   ButtonLoadingDemo(),
+                  SizedBox(height: 16),
+                  ButtonGhostDemo(),
+                  SizedBox(height: 16),
+                  ButtonBlockDemo(),
                 ],
               ),
             ),
@@ -218,7 +222,7 @@ class _ButtonLoadingDemoState extends State<ButtonLoadingDemo> {
     return WidgetDemo(
       name: '加载中状态',
       description: '添加 loading 属性即可让按钮处于加载状态，最后两个按钮演示点击后进入加载状态。',
-      snippet: 'buttoin.loading',
+      snippet: 'button.loading',
       child: Column(
         children: [
           Row(
@@ -283,5 +287,63 @@ class _ButtonLoadingDemoState extends State<ButtonLoadingDemo> {
         loading[i] = false;
       });
     });
+  }
+}
+
+class ButtonGhostDemo extends StatelessWidget {
+  const ButtonGhostDemo({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return WidgetDemo(
+      description: '幽灵按钮将按钮的内容反色，背景变为透明，常用在有色背景上。',
+      name: '幽灵按钮',
+      snippet: 'button.ghost',
+      child: Container(
+        color: Colors.gray_5,
+        padding: const EdgeInsets.all(16),
+        child: Row(
+          children: const [
+            Button(
+                ghost: true, type: ButtonType.primary, child: Text('Primary')),
+            SizedBox(width: 16),
+            Button(ghost: true, child: Text('Default')),
+            SizedBox(width: 16),
+            Button(ghost: true, type: ButtonType.dashed, child: Text('Dashed')),
+            SizedBox(width: 16),
+            Button(
+              danger: true,
+              ghost: true,
+              type: ButtonType.primary,
+              child: Text('Danger'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class ButtonBlockDemo extends StatelessWidget {
+  const ButtonBlockDemo({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return WidgetDemo(
+      description: 'block 属性将使按钮适合其父宽度。',
+      name: 'Block 按钮',
+      snippet: 'button.block',
+      child: Column(
+        children: const [
+          Button(block: true, type: ButtonType.primary, child: Text('Primary')),
+          SizedBox(height: 16),
+          Button(block: true, child: Text('Default')),
+          SizedBox(height: 16),
+          Button(block: true, type: ButtonType.dashed, child: Text('Dashed')),
+          SizedBox(height: 16),
+          Button(block: true, type: ButtonType.link, child: Text('Link')),
+        ],
+      ),
+    );
   }
 }

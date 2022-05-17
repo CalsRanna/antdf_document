@@ -4,7 +4,7 @@ packages:
   ant_design_flutter:
     dependency: "direct main"
     description:
-      path: "D:\\Code\\ant_design_flutter"
+      path: "/Users/cals/Code/ant_design_flutter"
       relative: false
     source: path
     version: "0.0.1+4"
