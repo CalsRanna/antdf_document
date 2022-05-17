@@ -1,0 +1,102 @@
+import 'package:ant_design_flutter/ant_design_flutter.dart';
+
+void main() {
+  runApp(const AntApp(home: TableBasicDemo()));
+}
+
+class TableBasicDemo extends StatelessWidget {
+  const TableBasicDemo({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    var columns = [
+      const TableColumn(title: 'Name', dataIndex: 'name', width: 128),
+      const TableColumn(title: 'Age', dataIndex: 'age', width: 64),
+      const TableColumn(title: 'Address', dataIndex: 'address'),
+      TableColumn(
+        title: 'Tags',
+        dataIndex: 'tags',
+        render: (record) {
+          var tags = record.tags as List<String>;
+
+          return Space(
+            children: tags
+                .map((tag) => Tag(
+                      child: Text(tag.toUpperCase()),
+                      color: tag == 'loser'
+                          ? Colors.volcano_1
+                          : tag.length > 5
+                              ? Colors.geekblue_1
+                              : Colors.green_1,
+                    ))
+                .toList(),
+          );
+        },
+      ),
+      TableColumn(
+        title: 'Action',
+        render: (record) => Space(
+          children: [
+            Button(
+              child: Text('Invite ${record.name}'),
+              size: Size.small,
+              type: ButtonType.text,
+            ),
+            const Button(
+              child: Text('Delete'),
+              size: Size.small,
+              type: ButtonType.text,
+            ),
+          ],
+        ),
+      )
+    ];
+
+    var data = const <_TableData>[
+      _TableData(
+        key: '1',
+        name: 'John Brown',
+        age: 32,
+        address: 'New York No. 1 Lake Park',
+        tags: ['nice', 'developer'],
+      ),
+      _TableData(
+        key: '2',
+        name: 'Jim Green',
+        age: 42,
+        address: 'London No. 1 Lake Park',
+        tags: ['loser'],
+      ),
+    ];
+
+    return Scaffold(
+      body: Table<_TableData>(columns: columns, dataSource: data),
+    );
+  }
+}
+
+class _TableData {
+  const _TableData({
+    required this.key,
+    required this.name,
+    required this.age,
+    required this.address,
+    required this.tags,
+  });
+
+  final String key;
+  final String name;
+  final int age;
+  final String address;
+  final List<String> tags;
+
+  Map<String, dynamic> toJson() {
+    return {
+      'key': key,
+      'name': name,
+      'age': age,
+      'address': address,
+      'tags': tags,
+    };
+  }
+}

@@ -1,0 +1,20 @@
+import 'package:ant_design_flutter/ant_design_flutter.dart';
+
+void main() {
+  runApp(const AntApp(home: ImageBasicDemo()));
+}
+
+class ImageBasicDemo extends StatelessWidget {
+  const ImageBasicDemo({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: Image(
+        src:
+            'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+        width: 200,
+      ),
+    );
+  }
+}

@@ -1,0 +1,29 @@
+import 'package:ant_design_flutter/ant_design_flutter.dart';
+
+void main() {
+  runApp(const AntApp(home: NotificationBasicDemo()));
+}
+
+class NotificationBasicDemo extends StatelessWidget {
+  const NotificationBasicDemo({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Button(
+        child: const Text('Open the notification box'),
+        onClick: () => _handleClick(context),
+        type: ButtonType.primary,
+      ),
+    );
+  }
+
+  void _handleClick(BuildContext context) {
+    Notification.open(
+      context,
+      description: const Text(
+          'This is the content of the notification. This is the content of the notification. This is the content of the notification.'),
+      message: const Text('Notification Title'),
+    );
+  }
+}

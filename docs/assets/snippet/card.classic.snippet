@@ -1,4 +1,4 @@
-import 'package:ant_design_flutter/antdf.dart';
+import 'package:ant_design_flutter/ant_design_flutter.dart';
 
 void main() {
   runApp(const AntApp(home: CardClassicDemo()));
@@ -9,7 +9,7 @@ class CardClassicDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AntScaffold(
+    return Scaffold(
       body: SizedBox(
         child: Column(
           children: [
@@ -37,7 +37,7 @@ class CardClassicDemo extends StatelessWidget {
               ),
               extra: const Text('More'),
               title: const Text('Small size card'),
-              size: AntSize.small,
+              size: Size.small,
             ),
           ],
         ),

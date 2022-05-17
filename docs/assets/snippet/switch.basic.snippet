@@ -1,0 +1,16 @@
+import 'package:ant_design_flutter/ant_design_flutter.dart';
+
+void main() {
+  runApp(const AntApp(home: SwitchBasicDemo()));
+}
+
+class SwitchBasicDemo extends StatelessWidget {
+  const SwitchBasicDemo({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Switch(controller: SwitchController()..checked = true),
+    );
+  }
+}

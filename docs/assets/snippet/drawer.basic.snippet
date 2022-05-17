@@ -1,0 +1,35 @@
+import 'package:ant_design_flutter/ant_design_flutter.dart';
+
+void main() {
+  runApp(const AntApp(home: DrawerBasicDemo()));
+}
+
+class DrawerBasicDemo extends StatelessWidget {
+  const DrawerBasicDemo({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Button(
+        child: const Text('Open'),
+        onClick: () => _handleClick(context),
+        type: ButtonType.primary,
+      ),
+    );
+  }
+
+  void _handleClick(BuildContext context) {
+    Drawer(
+      context,
+      child: Column(
+        children: const [
+          Text('Some contents'),
+          Text('Some contents'),
+          Text('Some contents'),
+        ],
+      ),
+      placement: Placement.right,
+      title: const Text('Basic Drawer'),
+    );
+  }
+}
