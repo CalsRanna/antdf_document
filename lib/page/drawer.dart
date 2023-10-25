@@ -46,8 +46,8 @@ class DrawerDocument extends StatelessWidget {
   void _handleClick(BuildContext context) {
     Drawer(
       context,
-      child: Column(
-        children: const [
+      child: const Column(
+        children: [
           Text('Some contents'),
           Text('Some contents'),
           Text('Some contents'),

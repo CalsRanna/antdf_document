@@ -9,18 +9,18 @@ class TypographyDocument extends StatelessWidget {
   Widget build(BuildContext context) {
     return MyScaffold(
       body: ListView(
-        children: [
-          const TypographyTitle('Typography 排版', level: 2),
-          const TypographyParagraph('文本的基本格式。'),
-          const TypographyTitle('何时使用', level: 3),
-          const TypographyTitle('代码演示', level: 3),
+        children: const [
+          TypographyTitle('Typography 排版', level: 2),
+          TypographyParagraph('文本的基本格式。'),
+          TypographyTitle('何时使用', level: 3),
+          TypographyTitle('代码演示', level: 3),
           WidgetDemo(
               name: '标题组件',
               description: '展示不同级别的标题。',
               snippet: 'typography.title',
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   TypographyTitle('h1.Ant Design'),
                   TypographyTitle('h2.Ant Design', level: 2),
                   TypographyTitle('h3.Ant Design', level: 3),

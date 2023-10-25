@@ -8,22 +8,22 @@ class CardDocument extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MyScaffold(
-      body: ListView(children: [
-        const TypographyTitle('Card 卡片', level: 2),
-        const Padding(
+      body: ListView(children: const [
+        TypographyTitle('Card 卡片', level: 2),
+        Padding(
           padding: EdgeInsets.symmetric(
             vertical: 14,
           ),
           child: Text('通用卡片容器。'),
         ),
-        const TypographyTitle('何时使用', level: 3),
-        const Padding(
+        TypographyTitle('何时使用', level: 3),
+        Padding(
           padding: EdgeInsets.symmetric(
             vertical: 14,
           ),
           child: Text('最基础的卡片容器，可承载文字、列表、图片、段落，常用于后台概览页面。'),
         ),
-        const TypographyTitle('代码演示', level: 3),
+        TypographyTitle('代码演示', level: 3),
         WidgetDemo(
           description: '包含标题、内容、操作区域。',
           name: '典型卡片',
@@ -33,12 +33,12 @@ class CardDocument extends StatelessWidget {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 30.0),
+                  padding: EdgeInsets.only(bottom: 30.0),
                   child: Card(
-                    extra: const Text('More'),
-                    title: const Text('Default size card'),
+                    extra: Text('More'),
+                    title: Text('Default size card'),
                     child: Column(
-                      children: const [
+                      children: [
                         Text('Card content'),
                         Text('Card content'),
                         Text('Card content'),
@@ -47,11 +47,11 @@ class CardDocument extends StatelessWidget {
                   ),
                 ),
                 Card(
-                  extra: const Text('More'),
-                  title: const Text('Small size card'),
+                  extra: Text('More'),
+                  title: Text('Small size card'),
                   size: Size.small,
                   child: Column(
-                    children: const [
+                    children: [
                       Text('Card content'),
                       Text('Card content'),
                       Text('Card content'),

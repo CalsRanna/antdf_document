@@ -42,8 +42,8 @@ class ModalDocument extends StatelessWidget {
   void _handleClick(BuildContext context) {
     Modal(
       context,
-      content: Column(
-        children: const [
+      content: const Column(
+        children: [
           Text('Some contents...'),
           Text('Some contents...'),
           Text('Some contents...'),

@@ -12,7 +12,7 @@ class ButtonSizeDemo extends StatefulWidget {
 }
 
 class _ButtonSizeDemoState extends State<ButtonSizeDemo> {
-  Size size = Size.medium;
+  Size size = Size.middle;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class _ButtonSizeDemoState extends State<ButtonSizeDemo> {
                 child: const Text('Large'),
               ),
               Button(
-                onClick: () => setState(() => size = Size.medium),
+                onClick: () => setState(() => size = Size.middle),
                 child: const Text('Medium'),
               ),
               Button(

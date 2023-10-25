@@ -545,7 +545,7 @@ class _WidgetThumbnail extends StatelessWidget {
       onTap: onTap,
       child: SizedBox(
         height: 216,
-        width: 182,
+        width: 320,
         child: Card(
           hoverable: true,
           size: Size.small,

@@ -38,14 +38,14 @@ final GoRouter router = GoRouter(
   errorPageBuilder: (_, state) => _page(
     _,
     state,
-    MyScaffold(
+    const MyScaffold(
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Row(
               mainAxisSize: MainAxisSize.min,
-              children: const [
+              children: [
                 Icon(Icons.warning, color: Colors.orange_6, size: 24),
                 SizedBox(width: 8),
                 Text(
@@ -54,15 +54,15 @@ final GoRouter router = GoRouter(
                 ),
               ],
             ),
-            const SizedBox(height: 8),
-            const Text('This widget is still working in progress'),
+            SizedBox(height: 8),
+            Text('This widget is still working in progress'),
           ],
         ),
       ),
     ),
   ),
   routes: <GoRoute>[
-    GoRoute(path: '/', redirect: (_) => '/overview'),
+    GoRoute(path: '/', redirect: (_, state) => '/overview'),
     GoRoute(
       pageBuilder: (_, state) => _page(_, state, const AlertDocument()),
       path: '/alert',

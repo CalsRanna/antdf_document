@@ -48,9 +48,9 @@ class ButtonDocument extends StatelessWidget {
         const TypographyTitle('代码演示', level: 3),
         Row(
           children: [
-            Expanded(
+            const Expanded(
               child: Column(
-                children: const [
+                children: [
                   ButtonTypeDemo(),
                   SizedBox(height: 16),
                   ButtonSizeDemo(),
@@ -110,7 +110,7 @@ class ButtonSizeDemo extends StatefulWidget {
 }
 
 class _ButtonSizeDemoState extends State<ButtonSizeDemo> {
-  Size size = Size.medium;
+  Size size = Size.middle;
 
   @override
   Widget build(BuildContext context) {
@@ -129,7 +129,7 @@ class _ButtonSizeDemoState extends State<ButtonSizeDemo> {
                 child: const Text('Large'),
               ),
               Button(
-                onClick: () => setState(() => size = Size.medium),
+                onClick: () => setState(() => size = Size.middle),
                 child: const Text('Medium'),
               ),
               Button(
@@ -225,8 +225,8 @@ class _ButtonLoadingDemoState extends State<ButtonLoadingDemo> {
       snippet: 'button.loading',
       child: Column(
         children: [
-          Row(
-            children: const [
+          const Row(
+            children: [
               Button(
                 loading: true,
                 type: ButtonType.primary,
@@ -302,8 +302,8 @@ class ButtonGhostDemo extends StatelessWidget {
       child: Container(
         color: Colors.gray_5,
         padding: const EdgeInsets.all(16),
-        child: Row(
-          children: const [
+        child: const Row(
+          children: [
             Button(
                 ghost: true, type: ButtonType.primary, child: Text('Primary')),
             SizedBox(width: 16),
@@ -329,12 +329,12 @@ class ButtonBlockDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return WidgetDemo(
+    return const WidgetDemo(
       description: 'block 属性将使按钮适合其父宽度。',
       name: 'Block 按钮',
       snippet: 'button.block',
       child: Column(
-        children: const [
+        children: [
           Button(block: true, type: ButtonType.primary, child: Text('Primary')),
           SizedBox(height: 16),
           Button(block: true, child: Text('Default')),
